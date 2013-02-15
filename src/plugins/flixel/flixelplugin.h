@@ -1,7 +1,8 @@
 /*
- * Flare Tiled Plugin
+ * Flixel Tiled Plugin
  * Copyright 2010, Jaderamiso <jaderamiso@gmail.com>
  * Copyright 2011, Stefan Beller <stefanbeller@googlemail.com>
+ * Copyright 2013, Jameson Quave <jquave@gmail.com>
  *
  * This file is part of Tiled.
  *
@@ -19,10 +20,10 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef FLAREPLUGIN_H
-#define FLAREPLUGIN_H
+#ifndef FLIXELPLUGIN_H
+#define FLIXELPLUGIN_H
 
-#include "flare_global.h"
+#include "flixel_global.h"
 
 #include "mapwriterinterface.h"
 #include "mapreaderinterface.h"
@@ -30,9 +31,9 @@
 #include <QObject>
 #include <QMap>
 
-namespace Flare {
+namespace Flixel {
 
-class FLARESHARED_EXPORT FlarePlugin
+class FLIXELSHARED_EXPORT FlixelPlugin
         : public QObject
         , public Tiled::MapWriterInterface
         , public Tiled::MapReaderInterface
@@ -46,7 +47,7 @@ class FLARESHARED_EXPORT FlarePlugin
 #endif
 
 public:
-    FlarePlugin();
+    FlixelPlugin();
 
     // MapReaderInterface
     Tiled::Map *read(const QString &fileName);
@@ -63,6 +64,6 @@ private:
     QString mError;
 };
 
-} // namespace Flare
+} // namespace Flixel
 
-#endif // FLAREPLUGIN_H
+#endif // FLIXELPLUGIN_H

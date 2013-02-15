@@ -374,5 +374,5 @@ bool FlixelPlugin::checkOneLayerWithName(const Tiled::Map *map,
 }
 
 #if QT_VERSION < 0x050000
-Q_EXPORT_PLUGIN2(Flare, FlarePlugin)
+Q_EXPORT_PLUGIN2(Flixel, FlixelPlugin)
 #endif
