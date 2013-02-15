@@ -39,6 +39,9 @@
 #include <QStringList>
 #include <QTextStream>
 
+#include <QMessageBox>
+
+
 using namespace Flixel;
 using namespace Tiled;
 
@@ -315,7 +318,10 @@ bool FlixelPlugin::write(const Tiled::Map *map, const QString &fileName)
                     int id = 0;
                     if (t.tile)
                         id = gidMapper.cellToGid(t);
-                    out << id;
+                    // Flixel is offset by 1, first cell is blank
+                  int flixelId = 0;
+                  if(id>0) flixelId = id-1;
+                    out << flixelId;
                     if (x < mapWidth - 1)
                         out << ",";
                 }
@@ -349,6 +355,9 @@ bool FlixelPlugin::write(const Tiled::Map *map, const QString &fileName)
                 }
             }
         }
+      QMessageBox msgBox;
+      msgBox.setText("Wrote layer ");
+      msgBox.exec();
     }
     file.close();
     return true;
